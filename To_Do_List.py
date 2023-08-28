@@ -17,12 +17,12 @@ def list_goals():
         status = "✓" if goal["completed"] else " "
         print(f"{index}: [{status}] {goal['goal']}")
 
-def remove_goal(goal_index):
+def removed_goal(goal_index):
     if 0 <= goal_index < len(goals):
-        remove_goal == goals.pop(goal_index)
-        print(f"Goal '{remove_goal['goal']}' removed from your list!")
+        removed_goal == goals.pop(goal_index)
+        print(f"Goal '{removed_goal['goal']}' removed from your list!")
     else:
-        print("Invalid goal.")
+        print("Invalid goal index.")
 
 def main():
     while True:
@@ -47,7 +47,7 @@ def main():
         elif choice == "4":
             list_goals()
             goal_index = int(input("Write the goal index to remove it: " ))
-            remove_goal(goal_index)
+            removed_goal(goal_index)
         elif choice == "5":
             print("Thank you for using TO DO LIST!")
             break
@@ -55,7 +55,10 @@ def main():
             print("Invalid choice. Please write valid choice.")   
 
 if __name__ == "__main__":
-    main()
+    main()            
+
+
+    
         
 
         
