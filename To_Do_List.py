@@ -15,6 +15,8 @@ def list_goals():
     print("Goals:")
     for index, goal in enumerate(goals):
         status = "✓" if goal["completed"] else " "
-        print(f"{index}: [{status}] {goal['description']}")        
+        print(f"{index}: [{status}] {goal['description']}")
+        
+                
 
 
