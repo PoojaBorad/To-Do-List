@@ -7,12 +7,14 @@ def add_goal(goal_text):
         print("Your goal is added!\n")
 
 
-def mark_as_completed(goal_index):
-    if 0 <= goal_index < len (goals):
-        goals[goal_index]["completed"] = True
-        print("Goal is completed\n")
-    else:
-        print("Invalid goal index.\n")
+def mark_as_completed(goal_positions):
+    for goal_index in goal_positions:
+
+        if 0 <= goal_index < len (goals):
+           goals[goal_index]["completed"] = True
+           print(f"Goal{goal_index} is completed\n")
+        else:
+           print(f"Invalid goal index {goal_index}.\n")
 
 def list_goals():
     print("Goals:")
@@ -43,8 +45,9 @@ def main():
             add_goal(goal_text)
         elif choice == "2":
             list_goals()   
-            goal_index = int(input("Write the goal index to mark as completed: "))
-            mark_as_completed(goal_index) 
+            goal_positions = input("Write goal numbers (comma-separated) to mark as completed: ")
+            goal_positions = [int(position.strip()) for position in goal_positions.split(",")]
+            mark_as_completed(goal_positions) 
         elif choice == "3":
             list_goals()
         elif choice == "4":
